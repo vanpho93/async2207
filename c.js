@@ -20,3 +20,8 @@ function inSo(checkFunction) {
 }
 
 inSo(x => Math.sqrt(x) % 1 === 0);
+inSo(function(x) { return Math.sqrt(x) % 1 === 0 });
+
+const a = x => Math.sqrt(x) % 1 === 0;
+
+inSo(a);
