@@ -56,8 +56,8 @@ const tinhDienTich2 = async (dayLon, dayNho, chieuCao) => {
 tinhDienTich2(4, 5, 2)
     .then(dt => console.log(dt));
 
-const getTempByCityName = (cityName) => (
-    fetch(prefix + cityName)
-        .then(res => res.json())
-        .then(ResJson => ResJson.main.temp)
-);
+const getTempByCityName = async (cityName) => {
+    const res = await fetch(prefix + cityName)
+    const resJSON = await res.json();
+    return resJSON.main.temp;
+};
